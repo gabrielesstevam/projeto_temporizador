@@ -13,12 +13,9 @@ export default function App() {
 
         {
           listTimers.map((timer, index) => 
-            < Timer key={index} title={timer.title} resumedTime={timer.resumedTime} secondsParameter={timer.seconds}/>
+            < Timer key={index} index={index} setListTimers={setListTimers} title={timer.title} resumedTime={timer.resumedTime} secondsParameter={timer.seconds}/>
           )
         }
-
-        {/* < Timer title="Tarefa" resumedTime="12:12:12" secondsParameter={3600}/> */}
-        {/* < Timer title="Tarefa" resumedTime="12:12:12" secondsParameter={301}/> */}
       </div>
       
     </>

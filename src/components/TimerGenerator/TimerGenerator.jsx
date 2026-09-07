@@ -33,11 +33,11 @@ export default function TimerGenerator({ setListTimers }) {
                         }
                     }
                     count++
-                    // window.alert(`${count}${correct}${i}`)
                 }
 
                 if (!correct) {
                     window.alert("Determine o tempo do temporizador de acordo com os limites {99:60:60}")
+                    inputTimer.current.value = ""
                 } else {
                     let seconds = (timeSeparate[0] * 3600) + (timeSeparate[1] * 60) + (timeSeparate[2])
 
@@ -46,7 +46,7 @@ export default function TimerGenerator({ setListTimers }) {
                         resumedTime: time,
                         seconds: seconds
                     }])
-                    
+
                     inputTimer.current.value = ""
                     inputTitle.current.value = ""
                 }
