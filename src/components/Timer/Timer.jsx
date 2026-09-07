@@ -40,7 +40,8 @@ export default function Timer({index, setListTimers, title, resumedTime, seconds
         setRunning(false)
     }
     function DeleteTimer(){
-        setListTimers((e) => e.filter(timer => e.indexOf(timer) != index))
+        setListTimers((e) => e.splice(index, 1)
+        .filter(timer => e.indexOf(timer) != index))
         clearInterval(timerFunctions.current)
     }
     useEffect(() => {

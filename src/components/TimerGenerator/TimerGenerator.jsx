@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus } from "@fortawesome/free-solid-svg-icons"
 import { useRef } from "react";
 // COMPONENT ------
-export default function TimerGenerator({ setListTimers }) {
+export default function TimerGenerator({ setListTimers, setNumId, numId}) {
     const regex = /^\d{2}:\d{2}:\d{2}$/
     const inputTitle = useRef()
     let inputTimer = useRef()
@@ -44,9 +44,11 @@ export default function TimerGenerator({ setListTimers }) {
                     setListTimers((e) => [...e, {
                         title: title,
                         resumedTime: time,
-                        seconds: seconds
+                        seconds: seconds,
+                        id:numId
                     }])
 
+                    setNumId((e) => e + 1)
                     inputTimer.current.value = ""
                     inputTitle.current.value = ""
                 }
