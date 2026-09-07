@@ -1,9 +1,4 @@
 @import "tailwindcss";
-@font-face {
-  font-family: Calculator;
-  src: url(Calculator.ttf);
-}
-
 *{
   box-sizing: border-box;
 }
