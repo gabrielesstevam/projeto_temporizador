@@ -46,7 +46,7 @@ export default function TimerGenerator({ setListTimers }) {
                         resumedTime: time,
                         seconds: seconds
                     }])
-
+                    
                     inputTimer.current.value = ""
                     inputTitle.current.value = ""
                 }

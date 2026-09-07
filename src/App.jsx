@@ -12,13 +12,13 @@ export default function App() {
       <div className="flex flex-col-reverse gap-5">
 
         {
-          listTimers.map((timer) => 
-            < Timer title={timer.title} resumedTime={timer.resumedTime} seconds={timer.seconds}/>
+          listTimers.map((timer, index) => 
+            < Timer key={index} title={timer.title} resumedTime={timer.resumedTime} secondsParameter={timer.seconds}/>
           )
         }
 
-        < Timer title="Tarefa" resumedTime="12:12:12" seconds={1234124}/>
-        < Timer title="Tarefa" resumedTime="12:12:12" seconds={1234124}/>
+        {/* < Timer title="Tarefa" resumedTime="12:12:12" secondsParameter={3600}/> */}
+        {/* < Timer title="Tarefa" resumedTime="12:12:12" secondsParameter={301}/> */}
       </div>
       
     </>
