@@ -10,7 +10,7 @@ export default function App() {
   return (
     <>
       <TimerGenerator setListTimers={setListTimers} setNumId={setNumId} numId={numId}/>
-      <div className="flex flex-col-reverse gap-5">
+      <div className="flex flex-col-reverse gap-5 md:flex-row md:flex-wrap md:justify-center">
 
         {
           listTimers.map((timer, index) => 

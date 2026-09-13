@@ -52,7 +52,7 @@ export default function Timer({index, setListTimers, title, resumedTime, seconds
     },[timer])
 
     return(
-        <div className="bg-linear-to-tr from-blue-400 to-blue-800 mx-5 rounded-xl p-2 text-white flex justify-between shadow-xl/30 shadow-blue-500 gap-3 hover:scale-95 transition duration-200">
+        <div className="bg-linear-to-tr from-blue-400 to-blue-800 mx-5 rounded-xl p-2 text-white flex justify-between shadow-xl/30 shadow-blue-500 gap-3 hover:scale-95 transition duration-200 md:w-2/5 lg:w-1/3">
             <div className="flex flex-col gap-2 justify-between min-w-[80%]">
                 <span className="flex flex-col gap-2">
                     <p className="bg-linear-to-r from-[#ffffff41] shadow-2xl/30 shadow-white p-2 rounded-lg text-white truncate h-full">{title}</p>
@@ -60,7 +60,7 @@ export default function Timer({index, setListTimers, title, resumedTime, seconds
                 </span>
                 <p className="p-1 text-lg bg-white text-blue-500 text-center rounded-lg shadow-lg/40 shadow-white">{timerText}</p>
             </div>
-            <div className="flex flex-col justify-between gap-3 p-1 max-w-[20%]">
+            <div className="flex flex-col justify-between gap-3 p-1 max-w-[20%] w-full">
                 <button onClick={DeleteTimer} className={buttonClass}><FontAwesomeIcon icon={faClose}/></button>
                 {
                     ButtonRunning()

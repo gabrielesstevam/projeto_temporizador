@@ -60,10 +60,10 @@ export default function TimerGenerator({ setListTimers, setNumId, numId}) {
     }
 
     return (
-        <div className="text-sm p-3 bg-linear-to-tr from-blue-400 to-blue-800 m-auto w-[90%] my-4 rounded-xl shadow-2xl/50 shadow-blue-500 flex gap-3 flex-col">
+        <div className="text-sm p-3 bg-linear-to-tr from-blue-400 to-blue-800 m-auto w-[90%] my-4 rounded-xl shadow-2xl/50 shadow-blue-500 flex gap-3 flex-col md:w-2/3 lg:w-2/5">
             <input className="text-center text-blue-700 rounded-sm bg-white p-2.5 shadow-white shadow-xl/12" type="text" name="title" id="ititle" ref={inputTitle} placeholder="Digite o título do seu temporizador" required />
             <input className="text-center text-blue-700 rounded-sm bg-white p-2.5 shadow-white shadow-xl/12 num " type="text" name="title" id="ititle" ref={inputTimer} placeholder="Determine o tempo no formato {00:00:00}" required />
-            <button className="button text-blue-700 bg-white p-3 rounded-lg shadow-white shadow-xl/12 hover:scale-103 transition duration-500 hover:bg-blue-100 active:scale-140" onClick={newTimer}><FontAwesomeIcon icon={faPlus} /></button>
+            <button className="button text-blue-700 bg-white p-3 rounded-lg shadow-white shadow-xl/12 hover:scale-101 transition duration-500 hover:bg-blue-100 active:scale-140" onClick={newTimer}><FontAwesomeIcon icon={faPlus} /></button>
         </div>
     )
 }
