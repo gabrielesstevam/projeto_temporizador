@@ -2,8 +2,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlay, faClose, faPause, faRotateLeft } from "@fortawesome/free-solid-svg-icons"
 import { useEffect, useRef, useState } from "react"
+import { motion } from "motion/react"
 // COMPONENT ------
-export default function Timer({index, setListTimers, title, resumedTime, secondsParameter}){
+export default function Timer({index, id, setListTimers, title, resumedTime, secondsParameter}){
     const [running, setRunning] = useState(false)
     const [timer, setTimer] = useState(secondsParameter)
     const buttonClass = "bg-white text-blue-500 py-4 px-3 rounded-xl hover:scale-104 transition duration-300 active:scale-140 hover:bg-blue-100"
@@ -40,8 +41,7 @@ export default function Timer({index, setListTimers, title, resumedTime, seconds
         setRunning(false)
     }
     function DeleteTimer(){
-        setListTimers((e) => e.splice(index, 1)
-        .filter(timer => e.indexOf(timer) != index))
+        setListTimers((e) => e.filter(timer => timer.id != id))
         clearInterval(timerFunctions.current)
     }
     useEffect(() => {
@@ -52,7 +52,8 @@ export default function Timer({index, setListTimers, title, resumedTime, seconds
     },[timer])
 
     return(
-        <div className="bg-linear-to-tr from-blue-400 to-blue-800 mx-5 rounded-xl p-2 text-white flex justify-between shadow-xl/30 shadow-blue-500 gap-3 hover:scale-95 transition duration-200 md:w-2/5 lg:w-1/3">
+        <motion.div initial={{scale:0, opacity:0}} animate={{scale: 1, opacity:1}} exit={{scale:0, opacity:0 }} transition={{ duration: 0.1, ease: "linear"}}
+        className="bg-linear-to-tr from-blue-400 to-blue-800 mx-5 rounded-xl p-2 text-white flex justify-between shadow-xl/30 shadow-blue-500 gap-3 hover:scale-95 transition duration-200 md:w-2/5 lg:w-1/3">
             <div className="flex flex-col gap-2 justify-between min-w-[80%]">
                 <span className="flex flex-col gap-2">
                     <p className="bg-linear-to-r from-[#ffffff41] shadow-2xl/30 shadow-white p-2 rounded-lg text-white truncate h-full">{title}</p>
@@ -66,6 +67,6 @@ export default function Timer({index, setListTimers, title, resumedTime, seconds
                     ButtonRunning()
                 }
             </div>
-        </div>
+        </motion.div>
     )
 }

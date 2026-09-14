@@ -2,6 +2,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus } from "@fortawesome/free-solid-svg-icons"
 import { useRef } from "react";
+import { motion } from "motion/react"
 // COMPONENT ------
 export default function TimerGenerator({ setListTimers, setNumId, numId}) {
     const regex = /^\d{2}:\d{2}:\d{2}$/
@@ -60,10 +61,11 @@ export default function TimerGenerator({ setListTimers, setNumId, numId}) {
     }
 
     return (
-        <div className="text-sm p-3 bg-linear-to-tr from-blue-400 to-blue-800 m-auto w-[90%] my-4 rounded-xl shadow-2xl/50 shadow-blue-500 flex gap-3 flex-col md:w-2/3 lg:w-2/5">
+        <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{ duration: 0.8, ease: "easeIn"}}
+        className="text-sm p-3 bg-linear-to-tr from-blue-400 to-blue-800 m-auto w-[90%] my-4 rounded-xl shadow-2xl/50 shadow-blue-500 flex gap-3 flex-col md:w-2/3 lg:w-2/5">
             <input className="text-center text-blue-700 rounded-sm bg-white p-2.5 shadow-white shadow-xl/12" type="text" name="title" id="ititle" ref={inputTitle} placeholder="Digite o título do seu temporizador" required />
             <input className="text-center text-blue-700 rounded-sm bg-white p-2.5 shadow-white shadow-xl/12 num " type="text" name="title" id="ititle" ref={inputTimer} placeholder="Determine o tempo no formato {00:00:00}" required />
             <button className="button text-blue-700 bg-white p-3 rounded-lg shadow-white shadow-xl/12 hover:scale-101 transition duration-500 hover:bg-blue-100 active:scale-140" onClick={newTimer}><FontAwesomeIcon icon={faPlus} /></button>
-        </div>
+        </motion.div>
     )
 }
